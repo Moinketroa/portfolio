@@ -1,0 +1,126 @@
+:host {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.home-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 16px;
+
+  .home-picture-container {
+    max-height: 320px;
+    max-width: 320px;
+    height: auto;
+    width: auto;
+
+    .home-picture {
+      height: calc(100% - (2 * 16px));
+      width: calc(100% - (2 * 16px));
+      border: 16px solid white;
+      border-radius: 50%;
+      filter: drop-shadow(-16px 16px 4px #4444);
+    }
+  }
+
+  .home-about-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+    color: white;
+
+    .home-greets {
+      font-family: "Bradley Hand", cursive;
+      font-size: 32px;
+      font-style: italic;
+    }
+
+    .home-itsa-me {
+      font-family: Verdana, sans-serif;
+      font-size: 40px;
+      white-space: nowrap;
+
+      .home-my-name {
+        display: inline-block;
+        position: relative;
+      }
+
+      .home-my-name::before {
+        transform: scaleX(0);
+        transform-origin: bottom right;
+      }
+
+      .home-my-name:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      .home-my-name::before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: orange;
+        z-index: -1;
+        transition: transform .3s ease;
+      }
+    }
+
+    .home-title {
+      font-family: Monaco, "Lucida Console", monospace;
+      font-size: 18px;
+
+      text-align: end;
+      margin-top: 4px;
+
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid orange;
+      animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+
+    .home-contact {
+      display: flex;
+      flex-direction: row-reverse;
+      margin-top: 8px;
+
+      .home-linkedin {
+        background-image: url('../../assets/linkedin.svg');
+        background-size: cover;
+        height: 28px;
+        width: 30px;
+      }
+
+      .home-youtube {
+        background-image: url('../../assets/youtube.svg');
+        background-size: cover;
+        height: 28px;
+        width: 36px;
+      }
+
+      .home-github {
+        background-image: url('../../assets/github.svg');
+        background-size: cover;
+        height: 28px;
+        width: 34px;
+      }
+    }
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}

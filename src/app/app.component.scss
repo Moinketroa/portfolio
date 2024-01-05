@@ -1,0 +1,46 @@
+.app-container {
+  overflow: hidden;
+
+  max-height: 100%;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  background-image: linear-gradient(90deg, rgba(0,212,134,1) 0%, rgba(0,150,208,1) 64%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+
+  z-index: -2;
+
+  &:before {
+    content: '';
+    background: url('https://www.transparenttextures.com/patterns/cartographer.png');
+    width: 800%;
+    position: absolute;
+    top: -400%;
+    right: -400%;
+    height: 800%;
+    opacity: .5;
+    animation-name: rotate;
+    animation-duration: 140s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: -1;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotateZ(0deg);
+    }
+
+    100% {
+      transform: rotateZ(360deg)
+    }
+  }
+
+}
